@@ -1,0 +1,2 @@
+# Maru - Allow system_server create new service
+allow system_server default_android_service:service_manager { add find };
