@@ -7,7 +7,11 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Get non-open-source specific aspects
+ifeq ($(TARGET_DEVICE),hotdogb)
+$(call inherit-product-if-exists, vendor/oneplus/sm8150-common-hotdogb/sm8150-common-vendor.mk)
+else
 $(call inherit-product-if-exists, vendor/oneplus/sm8150-common/sm8150-common-vendor.mk)
+endif
 
 # Additional native libraries
 PRODUCT_COPY_FILES += \
